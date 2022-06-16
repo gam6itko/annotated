@@ -51,10 +51,10 @@ final class Column
         private mixed $typecast = null,
         private bool $castDefault = false,
         /**
-         * @var array Database engine specific options
+         * @var array Database engine specific attributes
          */
         #[ArrayShape(['unsigned' => 'bool', 'zerofill' => 'bool'])]
-        private array $options = [],
+        private array   $attributes = [],
     ) {
         if ($default !== null) {
             $this->hasDefault = true;
@@ -106,8 +106,8 @@ final class Column
         return $this->typecast;
     }
 
-    public function getOptions(): array
+    public function getAttributes(): array
     {
-        return $this->options;
+        return $this->attributes;
     }
 }
